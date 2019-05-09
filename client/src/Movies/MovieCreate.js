@@ -42,21 +42,23 @@ class MovieCreate extends React.Component {
           })
           .then(function (response) {
             console.log(response);
-            this.setState({
-                title:"",
-                director:"",
-                metascore: null,
-                stars:[]
-            })
+            
           })
           .catch(function (error) {
             console.log(error);
           });
+          this.setState({
+            title:"",
+            director:"",
+            metascore: "",
+            stars:[]
+        })
+        this.props.history.push('/')
     }
 
     render() {
         return(
-            <div>
+            <div class="addForm">
                 <form>
                     <input 
                         type="text"
@@ -79,14 +81,22 @@ class MovieCreate extends React.Component {
                         onChange = {this.inputChange}
                         value={this.state.metascore}
                     />
-                    <input 
-                        type="text"
-                        placeholder={this.state.stars.length === 0? "add star one at a time" : `${this.state.stars.length} stars already added`}
-                        name="star"
-                        onChange = {this.inputChange}
-                        value={this.state.star}
-                    />
-                    <button onClick={this.addStarToList}>Add Star</button>
+                    <div className="addActorBox">
+                        <input 
+                            type="text"
+                            placeholder={this.state.stars.length === 0? "add star one at a time" : `${this.state.stars.length} stars already added`}
+                            name="star"
+                            onChange = {this.inputChange}
+                            value={this.state.star}
+                        />
+                        
+                        <button onClick={this.addStarToList}>Add Star</button>
+                        <div className="addActorBoxInner">
+                            {this.state.stars.map( star => 
+                                <span>{star}</span>
+                            )}
+                        </div>
+                    </div>
                     <button onClick={this.addMovie}>Add Movie</button>
                 </form>
             </div>

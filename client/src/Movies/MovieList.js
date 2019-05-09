@@ -36,7 +36,7 @@ export default class MovieList extends Component {
 
 function MovieDetails({ movie }) {
   return (
-    <Link to={`/movies/${movie.id}`}>
+    <Link to={`/movies/list/${movie.id}`}>
       <MovieCard movie={movie} />
     </Link>
   );

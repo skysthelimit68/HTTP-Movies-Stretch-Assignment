@@ -5,6 +5,16 @@ body {
   background-color: #f2f2f2;
 }
 
+.movie-list {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie-list a {
+  width:23.5%;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -14,6 +24,7 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  min-height: 350px;
 }
 
 .movie-director {
@@ -74,4 +85,46 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.addForm {
+  width:100%;
+  max-width:450px;
+  margin: 0 auto;
+  border: 1px solid #00000030;
+  box-shadow: 0 0 18px #333333;
+  padding: 15px 20px;
+}
+
+.addForm form {
+  display:flex;
+  flex-direction:column;
+}
+
+.addForm input {
+  padding: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.addForm button {
+  border-radius:none;
+  padding:10px;
+
+}
+
+.addActorBox {
+  width:80%;
+  border:1px solid #00000030;
+  padding:10px;
+  margin:10px auto;
+}
+.addActorBoxInner {
+  width:90%;
+  margin:10 auto 0;
+}
+
+.addActorBox span {
+  font-size: 14px;
+    margin: 5px 10px;
 }
